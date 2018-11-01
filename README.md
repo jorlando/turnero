@@ -37,3 +37,15 @@ Login valido:
 Login Invalido:
 	http://localhost:8080/users/login?alias=miAlias&password=otraPass
 
+
+## Explicacion:
+Los requests entran por el UrlMappings que es quien rutea las llamadas (https://github.com/jorlando/turnero/blob/master/grails-app/controllers/turnero/UrlMappings.groovy) ahi se fija la regla, por default entra en "/$controller/$action?/" donde primero esta el nombre del controller y despues el nombre del metodo a ejecutar.
+
+
+### Ejemplo url de login:
+
+http://localhost:8080/users/login?alias=miAlias&password=miPass 
+
+Va al controller Users https://github.com/jorlando/turnero/blob/master/grails-app/controllers/turnero/UsersController.groovy y busca el metodo login. En params viene todo lo que paso por parametro de url, llama al service (https://github.com/jorlando/turnero/blob/master/grails-app/services/turnero/UsersService.groovy) que es el encargado de manejar los objetos de la base de datos (toda app de grails tiene una base en memoria) y hace el render de una vista (https://github.com/jorlando/turnero/blob/master/grails-app/views/users/loginOk.gsp)
+
+
