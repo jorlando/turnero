@@ -23,8 +23,17 @@ Trabajo practico para 75.18 - Proyectos Informáticos FIUBA
 * Si no setean estas versiones por default y tiene que abrir otra terminal se va a perder lo que tienen seteado y tiene que setearlo a mano de esta manera.
 
 ## Uso de grails:
-grails test-app: corre los test
-grails clean: limpia lo compilado y baja dependencias
-grails compile: compila la app
-grails run-app: Levanta la app y la deja disponible para pegarle desde el browser (http://localhost:8080)
+* grails test-app: corre los test
+* grails clean: limpia lo compilado y baja dependencias
+* grails compile: compila la app
+* grails run-app: Levanta la app y la deja disponible para pegarle desde el browser (http://localhost:8080)
+
+Crear un user:
+	http://localhost:8080/users/create?alias=miAlias&name=miName&lastName=miLastName&email=miEmail&password=miPass
+
+Login valido: 
+	http://localhost:8080/users/login?alias=miAlias&password=miPass
+	
+Login Invalido:
+	http://localhost:8080/users/login?alias=miAlias&password=otraPass
 
