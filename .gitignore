@@ -4,7 +4,7 @@
 # to generate your .gitignore file.
 
 # web application files
-/web-app/WEB-INF/classes
+/turnero/web-app/WEB-INF/classes
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -14,20 +14,21 @@
 *Db.script
 
 # logs
-/stacktrace.log
-/test/reports
-/logs
+/turnero/stacktrace.log
+/turnero/test/reports
+/turnero/logs
 
 # project release file
-/*.war
+/turnero/*.war
 
 # plugin release files
 /*.zip
-/plugin.xml
+/turnero/plugin.xml
 
 # older plugin install locations
-/plugins
-/web-app/plugins
+/turnero/plugins
+/turnero/web-app/plugins
 
 # "temporary" build files
 /target
+/turnero/target/

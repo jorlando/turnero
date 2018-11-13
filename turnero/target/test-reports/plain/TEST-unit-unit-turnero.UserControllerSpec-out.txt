@@ -1,5 +1,0 @@
---Output from test login without params--
---Output from test login with params, valid login--
---Output from test login with params, invalid pwd--
---Output from test create without all params--
---Output from test create with all params--

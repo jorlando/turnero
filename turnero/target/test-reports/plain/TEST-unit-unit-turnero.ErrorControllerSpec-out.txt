@@ -1,3 +1,0 @@
---Output from test index with status code and message--
---Output from test index without status code or message--
---Output from test index without status code or message, with forwardURI--
