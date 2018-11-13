@@ -1,0 +1,22 @@
+Testsuite: turnero.UserControllerSpec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.696 sec
+------------- Standard Output ---------------
+--Output from test login without params--
+--Output from test login with params, valid login--
+--Output from test login with params, invalid pwd--
+--Output from test create without all params--
+--Output from test create with all params--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test login without params--
+--Output from test login with params, valid login--
+--Output from test login with params, invalid pwd--
+--Output from test create without all params--
+--Output from test create with all params--
+------------- ---------------- ---------------
+
+Testcase: test login without params took 1.909 sec
+Testcase: test login with params, valid login took 0.463 sec
+Testcase: test login with params, invalid pwd took 0.036 sec
+Testcase: test create without all params took 0.042 sec
+Testcase: test create with all params took 0.203 sec

@@ -1,0 +1,16 @@
+Testsuite: turnero.ErrorControllerSpec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.808 sec
+------------- Standard Output ---------------
+--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+------------- ---------------- ---------------
+
+Testcase: test index with status code and message took 8.688 sec
+Testcase: test index without status code or message took 0.013 sec
+Testcase: test index without status code or message, with forwardURI took 0.009 sec

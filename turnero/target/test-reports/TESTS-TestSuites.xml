@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" id="0" name="ErrorControllerSpec" package="turnero" skipped="0" tests="3" time="8.808" timestamp="2018-11-13T02:23:01">
+      <properties />
+
+      <testcase classname="turnero.ErrorControllerSpec" name="test index with status code and message" time="8.688" />
+
+      <testcase classname="turnero.ErrorControllerSpec" name="test index without status code or message" time="0.013" />
+
+      <testcase classname="turnero.ErrorControllerSpec" name="test index without status code or message, with forwardURI" time="0.009" />
+
+      <system-out><![CDATA[--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" id="1" name="UserControllerSpec" package="turnero" skipped="0" tests="5" time="2.696" timestamp="2018-11-13T02:23:10">
+      <properties />
+
+      <testcase classname="turnero.UserControllerSpec" name="test login without params" time="1.909" />
+
+      <testcase classname="turnero.UserControllerSpec" name="test login with params, valid login" time="0.463" />
+
+      <testcase classname="turnero.UserControllerSpec" name="test login with params, invalid pwd" time="0.036" />
+
+      <testcase classname="turnero.UserControllerSpec" name="test create without all params" time="0.042" />
+
+      <testcase classname="turnero.UserControllerSpec" name="test create with all params" time="0.203" />
+
+      <system-out><![CDATA[--Output from test login without params--
+--Output from test login with params, valid login--
+--Output from test login with params, invalid pwd--
+--Output from test create without all params--
+--Output from test create with all params--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test login without params--
+--Output from test login with params, valid login--
+--Output from test login with params, invalid pwd--
+--Output from test create without all params--
+--Output from test create with all params--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" id="2" name="UserServiceSpec" package="turnero" skipped="0" tests="7" time="1.817" timestamp="2018-11-13T02:23:13">
+      <properties />
+
+      <testcase classname="turnero.UserServiceSpec" name="test findUser when exists" time="1.339" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test findUser when not exists" time="0.023" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test create patient" time="0.16" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test create doctor" time="0.059" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test login when user exists, correct password" time="0.053" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test login when user exists, incorrect password" time="0.086" />
+
+      <testcase classname="turnero.UserServiceSpec" name="test login when user NOT exists" time="0.023" />
+
+      <system-out><![CDATA[--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" id="3" name="UserSpec" package="turnero" skipped="0" tests="1" time="0.34" timestamp="2018-11-13T02:23:15">
+      <properties />
+
+      <testcase classname="turnero.UserSpec" name="test toMap()" time="0.326" />
+
+      <system-out><![CDATA[--Output from test toMap()--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test toMap()--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

@@ -1,0 +1,7 @@
+--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--

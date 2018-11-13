@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" name="turnero.ErrorControllerSpec" skipped="0" tests="3" time="8.808" timestamp="2018-11-13T02:23:01">
+  <properties />
+  <testcase classname="turnero.ErrorControllerSpec" name="test index with status code and message" time="8.688" />
+  <testcase classname="turnero.ErrorControllerSpec" name="test index without status code or message" time="0.013" />
+  <testcase classname="turnero.ErrorControllerSpec" name="test index without status code or message, with forwardURI" time="0.009" />
+  <system-out><![CDATA[--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+]]></system-out>
+  <system-err><![CDATA[--Output from test index with status code and message--
+--Output from test index without status code or message--
+--Output from test index without status code or message, with forwardURI--
+]]></system-err>
+</testsuite>

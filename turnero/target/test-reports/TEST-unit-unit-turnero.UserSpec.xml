@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" name="turnero.UserSpec" skipped="0" tests="1" time="0.34" timestamp="2018-11-13T02:23:15">
+  <properties />
+  <testcase classname="turnero.UserSpec" name="test toMap()" time="0.326" />
+  <system-out><![CDATA[--Output from test toMap()--
+]]></system-out>
+  <system-err><![CDATA[--Output from test toMap()--
+]]></system-err>
+</testsuite>

@@ -1,0 +1,28 @@
+Testsuite: turnero.UserServiceSpec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.817 sec
+------------- Standard Output ---------------
+--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+------------- ---------------- ---------------
+
+Testcase: test findUser when exists took 1.339 sec
+Testcase: test findUser when not exists took 0.023 sec
+Testcase: test create patient took 0.16 sec
+Testcase: test create doctor took 0.059 sec
+Testcase: test login when user exists, correct password took 0.053 sec
+Testcase: test login when user exists, incorrect password took 0.086 sec
+Testcase: test login when user NOT exists took 0.023 sec

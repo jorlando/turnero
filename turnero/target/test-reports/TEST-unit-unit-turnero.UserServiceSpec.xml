@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacBook-Pro-4.local" name="turnero.UserServiceSpec" skipped="0" tests="7" time="1.817" timestamp="2018-11-13T02:23:13">
+  <properties />
+  <testcase classname="turnero.UserServiceSpec" name="test findUser when exists" time="1.339" />
+  <testcase classname="turnero.UserServiceSpec" name="test findUser when not exists" time="0.023" />
+  <testcase classname="turnero.UserServiceSpec" name="test create patient" time="0.16" />
+  <testcase classname="turnero.UserServiceSpec" name="test create doctor" time="0.059" />
+  <testcase classname="turnero.UserServiceSpec" name="test login when user exists, correct password" time="0.053" />
+  <testcase classname="turnero.UserServiceSpec" name="test login when user exists, incorrect password" time="0.086" />
+  <testcase classname="turnero.UserServiceSpec" name="test login when user NOT exists" time="0.023" />
+  <system-out><![CDATA[--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+]]></system-out>
+  <system-err><![CDATA[--Output from test findUser when exists--
+--Output from test findUser when not exists--
+--Output from test create patient--
+--Output from test create doctor--
+--Output from test login when user exists, correct password--
+--Output from test login when user exists, incorrect password--
+--Output from test login when user NOT exists--
+]]></system-err>
+</testsuite>
