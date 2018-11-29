@@ -14,11 +14,11 @@ Trabajo practico para 75.18 - Proyectos Informáticos FIUBA
 
 ### Instalar Grails:
 	sdk install grails
-* Verificar que instala la version 3.3.8
+* Verificar que instala la version 2.5.6
 
 ## Seteo de versiones:
 	sdk use java 8.0.191-oracle
-	sdk use grails 3.3.8
+	sdk use grails 2.5.6
 	
 * Si no setean estas versiones por default y tiene que abrir otra terminal se va a perder lo que tienen seteado y tiene que setearlo a mano de esta manera.
 
