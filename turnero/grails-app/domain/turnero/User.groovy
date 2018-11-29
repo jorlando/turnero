@@ -4,12 +4,14 @@ import utils.UserType
 
 class User {
     Long id
-    String fistName
-    String lastName
+    String name
     String email
     String password
     UserType type
     String especialidad = ""
+    String nacimiento = ""
+    String direccion = ""
+    String plan_medico = ""
     List<Jornada> jornadas = []
 
     static hasMany = [jornadas: Jornada]
@@ -19,14 +21,18 @@ class User {
     }
 
     def toMap(){
+
         [
                 id:id,
-                fist_name: fistName,
-                last_name:lastName,
+                name: name,
                 email:email,
                 password:password,
                 type:type.toString(),
-                especialidad:especialidad.toString(),
+                nacimiento: nacimiento,
+                direccion: direccion,
+                plan_medico: plan_medico,
+                speciality:especialidad.toString(),
+                image: null,
                 jornadas:jornadas?.collect{it.toMap()}
         ]
     }

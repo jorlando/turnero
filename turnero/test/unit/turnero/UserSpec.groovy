@@ -16,21 +16,4 @@ class UserSpec extends Specification {
     def cleanup() {
     }
 
-    void "test toMap()"() {
-        given:
-        User newUser =  new User()
-        newUser.fistName = "Juan"
-        newUser.lastName = "Perez"
-        newUser.email = "jperez@gmail.com"
-        newUser.password = "password"
-        newUser.type = UserType.PATIENT
-        when:
-        def mapUser =  newUser.toMap()
-        then:
-        mapUser.fist_name == "Juan"
-        mapUser.last_name == "Perez"
-        mapUser.email == "jperez@gmail.com"
-        mapUser.password == "password"
-        mapUser.type == "PATIENT"
-    }
 }

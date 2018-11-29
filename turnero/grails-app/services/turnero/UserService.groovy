@@ -8,14 +8,17 @@ import utils.UserType
 @Transactional
 class UserService {
 
-    def createUser(name, lastName, email, password, String type= "PATIENT") {
+
+    def createUser(nombre, email, password, nacimiento,direccion, plan_medico, String type= "PATIENT") {
         UserType userType = UserType.valueOf(type.toUpperCase().toString())
         User newUser = new User()
-        newUser.fistName = name
-        newUser.lastName = lastName
+        newUser.name = nombre
         newUser.email = email
         newUser.password = password
         newUser.type = userType
+        newUser.nacimiento = nacimiento
+        newUser.direccion = direccion
+        newUser.plan_medico = plan_medico
         newUser.save(flush:true, failOnError:true)
         newUser
     }
@@ -42,7 +45,6 @@ class UserService {
 
     def findTurnos(userId){
         User user=this.findUserById(userId)
-        println user
         List<Turno> turnos = []
         turnos << Turno.findAllByPatientAndFechaGreaterThan(user, new Date())
         turnos << Turno.findAllByDoctorAndFechaGreaterThan(user, new Date())
@@ -53,12 +55,12 @@ class UserService {
         turnos?.collect{it.toMap()}
     }
 
-    def createTurno(patientId,doctorId,dateTurno){
-        User patient = User.findById(patientId)
-        User doctor = User.findByIdAndType(doctorId,UserType.DOCTOR)
-        Date fechaTurno = parseDate(dateTurno)
+    def createTurno(patient_id, doctor_id, date, hour, comment){
+        User patient = User.findById(patient_id)
+        User doctor = User.findByIdAndType(doctor_id,UserType.DOCTOR)
+        Date fechaTurno = parseDate("${date} ${hour}")
         validateDateTurno(doctor, fechaTurno)
-        Turno newTurno = new Turno(doctor:doctor,fecha: fechaTurno, patient:patient)
+        Turno newTurno = new Turno(doctor:doctor,fecha: fechaTurno, patient:patient, comment: comment)
         newTurno.save(flush: true, failOnError: true)
         return newTurno
     }
