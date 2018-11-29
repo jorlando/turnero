@@ -13,7 +13,7 @@ Trabajo practico para 75.18 - Proyectos Informáticos FIUBA
 
 
 ### Instalar Grails:
-	sdk install grails
+	sdk install grails 2.5.6
 * Verificar que instala la version 2.5.6
 
 ## Seteo de versiones:
