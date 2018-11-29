@@ -46,9 +46,10 @@ class UserService {
     def findTurnos(userId){
         User user=this.findUserById(userId)
         List<Turno> turnos = []
-        turnos << Turno.findAllByPatientAndFechaGreaterThan(user, new Date())
-        turnos << Turno.findAllByDoctorAndFechaGreaterThan(user, new Date())
-        println turnos
+        //turnos << Turno.findAllByPatientAndFechaGreaterThan(user, new Date())
+        //turnos << Turno.findAllByDoctorAndFechaGreaterThan(user, new Date())
+        turnos << Turno.findAllByPatient(user)
+        turnos << Turno.findAllByDoctor(user)
         turnos = turnos.flatten()
         turnos = turnos.findAll()
         turnos = turnos?.sort{it.fecha}
