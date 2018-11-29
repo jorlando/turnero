@@ -3,12 +3,16 @@ package turnero
 import utils.UserType
 
 class User {
+    Long id
     String fistName
     String lastName
-    String alias
     String email
     String password
     UserType type
+    String especialidad = ""
+    List<Jornada> jornadas = []
+
+    static hasMany = [jornadas: Jornada]
 
 
     static constraints = {
@@ -16,12 +20,14 @@ class User {
 
     def toMap(){
         [
+                id:id,
                 fist_name: fistName,
                 last_name:lastName,
-                alias:alias,
                 email:email,
                 password:password,
-                type:type.toString()
+                type:type.toString(),
+                especialidad:especialidad.toString(),
+                jornadas:jornadas?.collect{it.toMap()}
         ]
     }
 }

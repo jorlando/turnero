@@ -16,11 +16,11 @@ class UserControllerSpec extends Specification {
     def setup() {
         UserService userServiceMock = Mock(UserService)
         userServiceMock.login(_,_)  >> { args ->
-            return (args[0]=="jperez" && args[1]=="password")
+            return (args[0]=="jperez@gmail.com" && args[1]=="password")
         }
 
-        userServiceMock.createUser(_, _, _, _, _, _) >> { args ->
-            new User(alias: args[0], fistName: args[1], lastName: args[2], email: args[3],password: args[4], type: UserType.PATIENT)
+        userServiceMock.createUser(_, _, _, _, _) >> { args ->
+            new User(fistName: args[0], lastName: args[1], email: args[2],password: args[3], type: UserType.PATIENT)
         }
         controller.userService = userServiceMock
     }
@@ -33,7 +33,7 @@ class UserControllerSpec extends Specification {
         controller.login()
         then:
         BadRequestsException ex = thrown()
-        ex.message == "Fields are required: alias, password"
+        ex.message == "Fields are required: email, password"
         ex.status == 400
     }
 
@@ -42,12 +42,11 @@ class UserControllerSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
         newUser.save(flush:true, failOnError: true)
-        params.alias = "jperez"
+        params.email = "jperez@gmail.com"
         params.password = "password"
         when:
         controller.login()
@@ -61,12 +60,11 @@ class UserControllerSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
         newUser.save(flush:true, failOnError: true)
-        params.alias = "jperez"
+        params.email = "jperez@gmail.com"
         params.password = "invalidPwd"
         when:
         controller.login()
@@ -78,19 +76,18 @@ class UserControllerSpec extends Specification {
 
     void "test create without all params"() {
         given:
-        params.alias = "jperez"
+        params.email = "jperez@gmail.com"
         params.password = "invalidPwd"
         when:
         controller.create()
         then:
         BadRequestsException ex = thrown()
-        ex.message == "Fields are required: alias, name, lastName, email, password"
+        ex.message == "Fields are required: name, lastName, email, password"
         ex.status == 400
     }
 
     void "test create with all params"() {
         given:
-        params.alias = "jperez"
         params.password = "invalidPwd"
         params.name = "name"
         params.email = "email"
@@ -101,7 +98,6 @@ class UserControllerSpec extends Specification {
         then:
         response.json.fist_name == "name"
         response.json.last_name == "lastName"
-        response.json.alias == "jperez"
         response.json.email ==  "email"
         response.json.password == "invalidPwd"
         response.json.type == "PATIENT"

@@ -23,13 +23,12 @@ class UserServiceSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
         newUser.save(flush:true, failOnError: true)
         when:
-        User userFound = service.findUser("jperez")
+        User userFound = service.findUser("jperez@gmail.com")
         then:
         userFound == newUser
         userFound.fistName == "Juan"
@@ -44,15 +43,13 @@ class UserServiceSpec extends Specification {
 
     void "test create patient"() {
         given:
-        def alias = "alias"
         def name = "name"
         def lastName = "lastname"
         def email = "email"
         def password = "pwd"
         when:
-        User newUser = service.createUser(alias, name, lastName, email, password)
+        User newUser = service.createUser(name, lastName, email, password)
         then:
-        newUser.alias == alias
         newUser.fistName == name
         newUser.lastName == lastName
         newUser.email == email
@@ -62,15 +59,13 @@ class UserServiceSpec extends Specification {
 
     void "test create doctor"() {
         given:
-        def alias = "alias"
         def name = "name"
         def lastName = "lastname"
         def email = "email"
         def password = "pwd"
         when:
-        User newUser = service.createUser(alias, name, lastName, email, password, "doctor")
+        User newUser = service.createUser(name, lastName, email, password, "doctor")
         then:
-        newUser.alias == alias
         newUser.fistName == name
         newUser.lastName == lastName
         newUser.email == email
@@ -83,13 +78,12 @@ class UserServiceSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
         newUser.save(flush:true, failOnError: true)
         when:
-        boolean login = service.login("jperez", "password")
+        boolean login = service.login("jperez@gmail.com", "password")
         then:
         login
     }
@@ -99,13 +93,12 @@ class UserServiceSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
         newUser.save(flush:true, failOnError: true)
         when:
-        boolean login = service.login("jperez", "pss")
+        boolean login = service.login("jperez@gmail.com", "pss")
         then:
         !login
     }
@@ -113,7 +106,7 @@ class UserServiceSpec extends Specification {
     void "test login when user NOT exists"() {
         given:
         when:
-        boolean login = service.login("jperez", "pss")
+        boolean login = service.login("jperez@gmail.com", "pss")
         then:
         !login
     }

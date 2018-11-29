@@ -21,7 +21,6 @@ class UserSpec extends Specification {
         User newUser =  new User()
         newUser.fistName = "Juan"
         newUser.lastName = "Perez"
-        newUser.alias = "jperez"
         newUser.email = "jperez@gmail.com"
         newUser.password = "password"
         newUser.type = UserType.PATIENT
@@ -30,7 +29,6 @@ class UserSpec extends Specification {
         then:
         mapUser.fist_name == "Juan"
         mapUser.last_name == "Perez"
-        mapUser.alias == "jperez"
         mapUser.email == "jperez@gmail.com"
         mapUser.password == "password"
         mapUser.type == "PATIENT"
